@@ -1,0 +1,61 @@
+$sider-width=200px
+$header-height=60px
+$app-sider-height=calc(100vh - 60px)
+$sider-width_nail=64px
+$app-content-padding=20px
+$app-content-cont-height=calc(100vh - 100px )
+$app-content-cont-height_crumb=calc(100vh - 110px )
+.app-header
+  width 100vw
+  height $header-height
+  line-height $header-height
+  display flex
+  position fixed
+  background-color #eee
+  .left
+    flex-basis $sider-width
+    background-color white
+  .left_thumbnail
+    flex-basis $sider-width_nail
+  .right
+    flex 1
+    background-color white
+.app-sider
+  width $sider-width
+  height $app-sider-height
+  top $header-height
+  overflow-y hidden
+  word-break break-all
+  background-color white
+  position fixed
+  left 0
+  .s-nav-active
+  .s-nav-active.el-icon-location
+      color #409EFF
+  .el-menu-vertical-demo
+    border 0
+  .el-menu--collapse
+    .el-submenu__title
+      span 
+        display none
+      .el-submenu__icon-arrow
+        display none
+.app-sider_nail
+  width $sider-width_nail
+.app-content
+  padding $header-height+$app-content-padding $app-content-padding $app-content-padding $sider-width+$app-content-padding
+  min-height 100vh
+  .app-crumb
+    padding 8px 0
+  .app-content-cont
+    background-color white
+    padding 20px
+    min-height $app-content-cont-height
+.app-content_nosider
+   padding $header-height+$app-content-padding $app-content-padding $app-content-padding
+.app-content_thumbnail
+   padding $header-height+$app-content-padding $app-content-padding $app-content-padding $sider-width_nail+$app-content-padding
+.app-content_crumb
+  padding-top $header-height
+  .app-content-cont
+    min-height $app-content-cont-height_crumb
