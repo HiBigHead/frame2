@@ -1,6 +1,6 @@
 const app={
     state:{
-        menuMode:'horizontal',//vertical,horizontal 
+        menuMode:'vertical',//vertical,horizontal 
         sidebar:{
             thumbnail:false,
             hoverShowTitle:true
