@@ -34,7 +34,7 @@ export const pagesRouterList = [
                 path: 'index',
                 component: _import('Index/index'),
                 meta: {
-                    title: '首页',
+                    title: '首页i',
                     icon: '',
                     sort: '',
                     isShow: false,
@@ -130,7 +130,7 @@ export const pagesRouterList = [
                             noCache: false
                         },
                         children: [
-                            
+
                         ]
                     }, {
                         path: 'post',
@@ -143,7 +143,7 @@ export const pagesRouterList = [
                             isShow: true,
                             noCache: false
                         }
-                    },{
+                    }, {
                         path: 'detail',
                         component: _import('Api/List/Detail'),
                         name: 'ApiListDetail',
@@ -224,9 +224,10 @@ export const pagesRouterList = [
         children: [
             {
                 path: 'list',
-                component: _import('Goods/List'),
-                name: 'SettingGoodsList', meta: {
-                    title: '货物清单',
+                component: _import('Setting/index'),
+                name: 'SettingGoodsList',
+                meta: {
+                    title: '设置',
                     icon: '',
                     sort: '',
                     isShow: false,

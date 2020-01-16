@@ -16,7 +16,15 @@ router.beforeEach(async (to, from, next) => {
     }
 })
 router.afterEach(to => {
+    if (store.getters.app.tags.show) {
+        store.dispatch('setTagsList', {
+            title: to.meta.title,
+            name: to.name,
+        })
+        store.dispatch('setTagsActive', to.name)
+    }
     store
-    .dispatch('setCrumbs',to.matched)
+        .dispatch('setCrumbs', to.matched)
+
 })
 

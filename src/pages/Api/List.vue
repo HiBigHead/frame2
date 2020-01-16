@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- <p>List</p> -->
-    <router-view></router-view>
+    <router-view name='pageRouterView'></router-view>
   </div>
 </template>
 

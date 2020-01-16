@@ -15,6 +15,7 @@
             v-if="!item.pathChildrenShow||item.children<1"
             :index="item.pathNav"
             :key="item.name"
+            @click="activeNav(item)"
           >
             <i class="el-icon-location"></i>
             <span
@@ -39,6 +40,7 @@
                       v-if="!item2.pathChildrenShow||item2.children<1"
                       :index="item2.pathNav"
                       :key="item2.name"
+                      @click="activeNav(item2)"
                     >
                       <i class="el-icon-location"></i>
                       <span
@@ -64,6 +66,7 @@
                                   v-if="!item3.pathChildrenShow||item3.children<1"
                                   :index="item3.pathNav"
                                   :key="item3.name"
+                                  @click="activeNav(item3)"
                                 >
                                   <i class="el-icon-location"></i>
                                   <span
@@ -117,6 +120,28 @@ export default {
     },
     isCollapse() {
       return this.app.sidebar.thumbnail;
+    },
+    showTags() {
+      return this.app.tags.show;
+    },
+    tagsList() {
+      return this.app.tags.list;
+    }
+  },
+  methods: {
+    activeNav(item) {
+      console.log(item);
+      this.showTags &&
+        this.$store.dispatch("setTagsList", {
+          title:
+            item.children && item.children.length > 0
+              ? item.children[0].meta.title
+              : item.meta.title,
+          name:
+            item.children && item.children.length > 0
+              ? item.children[0].name
+              : item.name
+        });
     }
   }
 };

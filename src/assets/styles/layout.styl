@@ -1,3 +1,4 @@
+$bg-color=#eee
 $sider-width=200px
 $header-height=60px
 $app-sider-height=calc(100vh - 60px)
@@ -5,13 +6,16 @@ $sider-width_nail=64px
 $app-content-padding=20px
 $app-content-cont-height=calc(100vh - 100px )
 $app-content-cont-height_crumb=calc(100vh - 110px )
+$app-tags-width=calc(100vw - 200px)
+$app-tags-height=calc(100vh - 60px)
+$app-tags-cont-height=calc(100vh - 101px)
 .app-header
   width 100vw
   height $header-height
   line-height $header-height
   display flex
   position fixed
-  background-color #eee
+  background-color $bg-color
   .left
     flex-basis $sider-width
     background-color white
@@ -21,6 +25,24 @@ $app-content-cont-height_crumb=calc(100vh - 110px )
   .right
     flex 1
     background-color white
+.app-tags
+  position fixed
+  left $sider-width
+  top $header-height
+  width $app-tags-width
+  height $app-tags-height
+  background-color white
+  .el-tabs__header
+    margin-bottom 0
+  .el-tabs__content
+    width 100%
+    height $app-tags-cont-height
+    background-color $bg-color
+    padding 15px
+    overflow auto
+  .el-tab-pane
+    background-color white
+    min-height 100%
 .app-sider
   width $sider-width
   height $app-sider-height
